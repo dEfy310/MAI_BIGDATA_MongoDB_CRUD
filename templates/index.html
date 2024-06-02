@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список ресторанов</title>
+</head>
+<body>
+    <h1>Список ресторанов</h1>
+    <ul>
+        <li><a href="{% url 'createRestaurant' %}">Добавить ресторан</a></li>
+    </ul>
+    <ul>
+        {% for restaurant in restaurants %}
+            <li>{{ restaurant.header }} - {{ restaurant.text }} - {{ restaurant.text }}
+                    <a href="{% url 'editRestaurant' 'Name' %}">Редактировать</a>
+                    <a href="{% url 'deleteRestaurant' 'Name' %}">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

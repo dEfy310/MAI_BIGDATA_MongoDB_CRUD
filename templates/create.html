@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить ресторан</title>
+</head>
+<body>
+    <h1>Добавить ресторан</h1>
+    <ul>
+        <li><a href="{% url 'restaurants' %}">Список лучших ресторанов Москвы</a></li>
+        <li><a href="{% url 'createRestaurant' %}">Добавить ресторан</a></li>
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        <label for="header">Название ресторана:</label>
+        <input type="text" id="header" header="header"><br>
+        <label for="text">Описание ресторана:</label>
+        <input type="text" id="text" name="text"><br>
+        <label for="text">Информация о ресторане:</label>
+        <input type="text" id="text" name="text"><br>
+        <button type="submit">Создать</button>
+    </form>
+</body>
+</html>

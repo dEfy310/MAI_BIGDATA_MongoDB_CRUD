@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить ресторан</title>
+</head>
+<body>
+    <h1>Удалить ресторан</h1>
+    <ul>
+        <li><a href="{% url 'restaurants' %}">Список лучших ресторанов Москвы</a></li>
+        <li><a href="{% url 'createRestaurant' %}">Добавить ресторан</a></li>
+    </ul>
+    <p>Вы уверены, что хотите удалить {{ restaurant.header }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Да, уверен</button>
+    </form>
+</body>
+</html>
